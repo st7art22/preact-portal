@@ -1,0 +1,8 @@
+{
+	"sourceMap": "inline",
+	"presets": ["es2015-loose", "stage-0", "react"],
+	"plugins": [
+		"transform-object-rest-spread",
+		["transform-react-jsx", { "pragma":"h" }]
+	]
+}
