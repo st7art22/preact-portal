@@ -20,7 +20,7 @@ describe('preact-portal', () => {
 		scratch = null;
 	});
 
-	it('should have tests', () => {
+	it('should be exported', () => {
 		expect(Portal).to.be.a('function');
 	});
 

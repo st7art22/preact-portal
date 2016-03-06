@@ -10,7 +10,11 @@ Use this if you have a component that needs to render children into some other p
 An example of this would be modal dialogs, where you may need to render `<Dialog />` into `<body>`.
 
 
-**[JSFiddle Demo](http://jsfiddle.net/developit/f1jmxtvg/)**
+| [Demo #1] | [Demo #2] |
+|:---------:|:---------:|
+| _Moving around the DOM by changing `into`._ | _Open a full-page modal from within a thumbnail._ |
+| <img src="https://i.gyazo.com/c08ff6fb5b3dc7da41099cb5c743ac86.gif" width="232"> | <img src="https://i.gyazo.com/afe7ebdaa2591dac92753af7066ac437.gif" width="176"> |
+
 
 
 ---
@@ -82,3 +86,5 @@ class Form extends Component {
 
 
 [preact]: https://github.com/developit/preact
+[Demo #1]: http://jsfiddle.net/developit/bsr7gmdd/
+[Demo #2]: http://jsfiddle.net/developit/f1jmxtvg/
