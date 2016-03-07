@@ -1,13 +1,15 @@
-# preact-portal
+# 🌌 preact-portal 🌠
 
 [![NPM](https://img.shields.io/npm/v/preact-portal.svg?style=flat)](https://www.npmjs.org/package/preact-portal)
 [![travis-ci](https://travis-ci.org/developit/preact-portal.svg?branch=master)](https://travis-ci.org/developit/preact-portal)
 
-> Render [Preact] components somewhere in [a different] space.
+### **Render [Preact] components into SPACE**\*
 
-Use this if you have a component that needs to render children into some other place in the DOM.
+_\* a space in the DOM. Sorry._
 
-An example of this would be modal dialogs, where you may need to render `<Dialog />` into `<body>`.
+> Use this if you have a component that needs to render children into some other place in the DOM.
+>
+> An example of this would be modal dialogs, where you may need to render `<Dialog />` into `<body>`.
 
 
 | [Demo #1] | [Demo #2] |
