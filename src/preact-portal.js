@@ -38,7 +38,9 @@ export default class Portal extends Component {
 		}
 
 		this.remote = render((
-			<PortalProxy>{ show && this.props.children || null }</PortalProxy>
+			<PortalProxy context={this.context}>
+				{ show && this.props.children || null }
+			</PortalProxy>
 		), this.into, this.remote);
 	}
 }
@@ -47,6 +49,9 @@ export default class Portal extends Component {
 // high-order component that renders its first child if it exists.
 // used as a conditional rendering proxy.
 class PortalProxy extends Component {
+	getChildContext() {
+		return this.props.context;
+	}
 	render({ children }) {
 		return children && children[0] || null;
 	}

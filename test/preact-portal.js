@@ -36,4 +36,37 @@ describe('preact-portal', () => {
 
 		expect(foo).to.have.property('innerHTML', '<div>hello</div>');
 	});
+
+	it('should preserve context', () => {
+		let ctx = { foo:'bar', baz:'bat' };
+		class Provider {
+			getChildContext() {
+				return ctx;
+			}
+			render({ children }) {
+				return children[0];
+			}
+		}
+
+		const Child = sinon.stub().returns(<div />);
+
+		let foo = document.createElement('div');
+		foo.setAttribute('id', 'foo');
+		scratch.appendChild(foo);
+
+		let base = document.createElement('div');
+		scratch.appendChild(base);
+
+		render((
+			<Provider>
+				<Portal into="#foo">
+					<Child />
+				</Portal>
+			</Provider>
+		), base);
+
+		expect(Child)
+			.to.have.been.calledOnce
+			.and.calledWith({}, ctx);
+	});
 });
