@@ -21,6 +21,7 @@ export default class Portal extends Component {
 
 	componentWillUnmount() {
 		this.renderLayer(false);
+		if (this.remote) this.remote.parentNode.removeChild(this.remote);
 	}
 
 	findNode(node) {
@@ -32,7 +33,7 @@ export default class Portal extends Component {
 		if (this.props.into!==this.intoPointer) {
 			this.intoPointer = this.props.into;
 			if (this.into && this.remote) {
-				render(<PortalProxy />, this.into, this.remote);
+				this.remote = render(<PortalProxy />, this.into, this.remote);
 			}
 			this.into = this.findNode(this.props.into);
 		}
@@ -42,6 +43,10 @@ export default class Portal extends Component {
 				{ show && this.props.children || null }
 			</PortalProxy>
 		), this.into, this.remote);
+	}
+
+	render() {
+		return null;
 	}
 }
 
