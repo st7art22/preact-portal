@@ -23,6 +23,10 @@
     "react",
     "portals"
   ],
+  "files": [
+    "src",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/developit/preact-portal.git"
