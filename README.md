@@ -1,5 +1,7 @@
 # 🌌 preact-portal 🌠
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/developit/preact-portal.svg)](https://greenkeeper.io/)
+
 [![NPM](https://img.shields.io/npm/v/preact-portal.svg?style=flat)](https://www.npmjs.org/package/preact-portal)
 [![travis-ci](https://travis-ci.org/developit/preact-portal.svg?branch=master)](https://travis-ci.org/developit/preact-portal)
 
