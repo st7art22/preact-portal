@@ -10,7 +10,7 @@ export default class Portal extends Component {
 	componentDidUpdate(props) {
 		for (let i in props) {
 			if (props[i]!==this.props[i]) {
-				return this.renderLayer();
+				return setTimeout(this.renderLayer);
 			}
 		}
 	}
@@ -28,7 +28,7 @@ export default class Portal extends Component {
 		return typeof node==='string' ? document.querySelector(node) : node;
 	}
 
-	renderLayer(show=true) {
+	renderLayer = (show=true) =>  {
 		// clean up old node if moving bases:
 		if (this.props.into!==this.intoPointer) {
 			this.intoPointer = this.props.into;

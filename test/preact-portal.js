@@ -69,4 +69,32 @@ describe('preact-portal', () => {
 			.to.have.been.calledOnce
 			.and.calledWith({}, ctx);
 	});
+
+	it('should only create one instance when forced to rerender by parent during first render', () => {
+
+		let foo = document.createElement('div');
+		foo.setAttribute('id', 'foo');
+		scratch.appendChild(foo);
+
+		let base = document.createElement('div');
+		scratch.appendChild(base);
+
+		class ParentForceUpdateOnMount extends Component {
+
+			componentDidMount() {
+				this.forceUpdate();
+			}
+
+			render() {
+				return (
+					<Portal into="#foo"><div>hello</div></Portal>
+				);
+			}
+		}
+
+		render(<ParentForceUpdateOnMount/>, base);
+
+		expect(foo).to.have.property('innerHTML', '<div>hello</div>');
+
+	});
 });
