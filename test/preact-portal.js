@@ -67,7 +67,7 @@ describe('preact-portal', () => {
 
 		expect(Child)
 			.to.have.been.calledOnce
-			.and.calledWith({}, ctx);
+			.and.calledWith({children: []}, ctx);
 	});
 
 	it('should only create one instance when forced to rerender by parent during first render', () => {

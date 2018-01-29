@@ -16,12 +16,14 @@ export default class Portal extends Component {
 	}
 
 	componentDidMount() {
+		this.isMounted=true;
 		this.renderLayer = this.renderLayer.bind(this);
 		this.renderLayer();
 	}
 
 	componentWillUnmount() {
 		this.renderLayer(false);
+		this.isMounted=false;
 		if (this.remote) this.remote.parentNode.removeChild(this.remote);
 	}
 
@@ -30,6 +32,8 @@ export default class Portal extends Component {
 	}
 
 	renderLayer(show=true) {
+		if (!this.isMounted) return;
+
 		// clean up old node if moving bases:
 		if (this.props.into!==this.intoPointer) {
 			this.intoPointer = this.props.into;
