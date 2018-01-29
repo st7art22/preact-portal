@@ -16,6 +16,7 @@ export default class Portal extends Component {
 	}
 
 	componentDidMount() {
+		this.renderLayer = this.renderLayer.bind(this);
 		this.renderLayer();
 	}
 
@@ -28,7 +29,7 @@ export default class Portal extends Component {
 		return typeof node==='string' ? document.querySelector(node) : node;
 	}
 
-	renderLayer = (show=true) =>  {
+	renderLayer(show=true) {
 		// clean up old node if moving bases:
 		if (this.props.into!==this.intoPointer) {
 			this.intoPointer = this.props.into;
