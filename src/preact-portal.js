@@ -24,7 +24,7 @@ export default class Portal extends Component {
 	componentWillUnmount() {
 		this.renderLayer(false);
 		this.isMounted=false;
-		if (this.remote) this.remote.parentNode.removeChild(this.remote);
+		if (this.remote && this.remote.parentNode) this.remote.parentNode.removeChild(this.remote);
 	}
 
 	findNode(node) {
